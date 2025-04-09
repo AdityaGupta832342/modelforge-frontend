@@ -20,7 +20,12 @@ export default function LayerItem({
 }: LayerItemProps) {
   const { attributes, listeners, setNodeRef, transform, active } = useDraggable({
     id,
-    data: { type, neuronCount },
+    data: { 
+      type,
+      neuronCount,
+      isLayer: true
+    },
+    disabled: false,
   });
 
   const style = transform
@@ -34,9 +39,10 @@ export default function LayerItem({
       {...listeners}
       {...attributes}
       onClick={onClick}
-      className={`flex flex-col items-center p-4 bg-[#2A214B] rounded-lg shadow-md cursor-pointer ${
+      className={`flex flex-col items-center p-4 bg-[#2A214B] rounded-lg shadow-md cursor-move ${
         selected ? 'border-2 border-blue-500' : 'border border-gray-500'
       } ${active ? 'opacity-50' : 'opacity-100'}`}
+      draggable={true}
     >
       <h3 className="text-white font-semibold">{type}</h3>
       <div className="mt-2 flex flex-wrap justify-center gap-1">
