@@ -2,7 +2,7 @@
 
 **ModelForge** is a visual, drag-and-drop interface to build and train deep learning models — no code, no fuss. Design neural networks like stacking Lego blocks and see them come to life with real-time training and visualization. Whether you're a beginner or a prototyping pro, ModelForge turns your ideas into working models faster than you can say "backpropagation."
 
-![ModelForge Banner](./model-forge/public/cropped-removebg-preview.png)
+![ModelForge Banner](./model-forge/public/modelForge (1).png)
 
 ---
 
