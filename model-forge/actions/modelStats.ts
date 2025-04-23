@@ -1,6 +1,6 @@
 "use server";
 //ts-ignore
-import { currentUser } from "@clerk/nextjs/server";
+import {currentUser} from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 
 class UserNotFoundErr extends Error {
@@ -14,9 +14,11 @@ export async function getDashboardStats() {
     if (!prisma) {
         throw new Error("Prisma client is not initialized");
       }
+
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr("User not found");
+    
   }
 
   const userId = user.id;

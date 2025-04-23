@@ -14,6 +14,8 @@ import { Separator } from "@/components/ui/separator";
 import CreateModelButton from "@/components/CreateModelButton";
 import Link from "next/link";
 
+import { RedirectToSignIn } from "@clerk/nextjs";
+
 function Home() {
   const [models, setModels] = useState<Awaited<ReturnType<typeof getUserModels>>>([]);
   const [loading, setLoading] = useState(true);
@@ -26,6 +28,8 @@ function Home() {
         setModels(userModels);
       } catch (error) {
         console.error("Error fetching user models:", error);
+        //
+         RedirectToSignIn({});
       }
     }
     fetchModels();

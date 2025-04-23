@@ -9,7 +9,9 @@ export type ModelElement = {
         icon: React.ElementType;
         label: string
     }
-    designerComponent: React.FC<any>;
+    designerComponent: React.FC<{
+        elementInstance: ModelElementInstance
+    }>;
     modelComponent: React.FC<any>;
     propertiesComponent: React.FC<any>;
 }
